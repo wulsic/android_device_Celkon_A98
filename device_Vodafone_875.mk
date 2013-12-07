@@ -16,6 +16,9 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, build/target/product/full.mk)
 
+# Set mod version
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.modversion=Balika011's-CM10-FOR-VF875-$(shell date +%m%d%Y)-NIGHTLY
 
 # Speed up scrolling
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -73,6 +76,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/TCT/Vodafone_875/prebuilt/system/etc/firmware/catcher_filter.bin:system/etc/firmware/catcher_filter.bin \
     device/TCT/Vodafone_875/prebuilt/system/etc/firmware/DSP_ROM:system/etc/firmware/DSP_ROM \
+    device/TCT/Vodafone_875/prebuilt/system/etc/firmware/modem.img:system/etc/firmware/modem.img \
     device/TCT/Vodafone_875/prebuilt/system/etc/firmware/mt6628_fm_rom.bin:system/etc/firmware/mt6628_fm_rom.bin \
     device/TCT/Vodafone_875/prebuilt/system/etc/firmware/mt6628_fm_v1_coeff.bin:system/etc/firmware/mt6628_fm_v1_coeff.bin \
     device/TCT/Vodafone_875/prebuilt/system/etc/firmware/mt6628_fm_v1_patch.bin:system/etc/firmware/mt6628_fm_v1_patch.bin \
