@@ -1,0 +1,10 @@
+# ueventd.*.rc file for MTK mt6575 by balika011
+
+/dev/diag                 0660   radio      radio
+
+/dev/msm_camera/*         0660   system     system
+
+# SGX device node
+/dev/pvrsrvkm             0666   root       root
+
+
