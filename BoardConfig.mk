@@ -40,12 +40,12 @@ WIFI_DRIVER_MODULE_NAME := wlan
 BOARD_HAVE_BLUETOOTH := true
 
 #EGL configuration
-BOARD_EGL_CFG := device/vodafone/vf875/prebuilt/system/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/TCT/Vodafone_875/prebuilt/system/lib/egl/egl.cfg
 USE_OPENGL_RENDERER := true
 
 #BOARD_KERNEL_BASE := 0x10000000
 #BOARD_KERNEL_PAGESIZE := 2048
-BOARD_CUSTOM_BOOTIMG_MK := device/vodafone/vf875/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/TCT/Vodafone_875/custombootimg.mk
 
 TARGET_USERIMAGES_USE_EXT4 := true
 # fix this up by examining /proc/mtd on a running device
@@ -56,14 +56,14 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 511M #vf875
 TARGET_RECOVERY_FORCE_BACKUP_SIZE := 6291456
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/vodafone/vf875/kernel
+TARGET_PREBUILT_KERNEL := device/TCT/Vodafone_875/kernel
 
 #BOARD_HAS_NO_SELECT_BUTTON := true
 # Use this flag if the board has a ext4 partition larger than 2gb
 #BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_PREBUILT_RECOVERY_KERNEL := device/vodafone/vf875/kernel #todo: add recovery-kernel
+TARGET_PREBUILT_RECOVERY_KERNEL := device/TCT/Vodafone_875/kernel #todo: add recovery-kernel
 TARGET_RECOVERY_PRE_COMMAND := "touch /cache/recovery/boot;sync;"
-#BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/vodafone/vf875/recovery/recovery_keys.c
+#BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/TCT/Vodafone_875/recovery/recovery_keys.c
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_USES_RECOVERY_CHARGEMODE := false
 BOARD_UMS_LUNFILE := /sys/devices/platform/mt_usb/gadget/lun%d/file

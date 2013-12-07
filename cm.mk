@@ -8,5 +8,5 @@ PRODUCT_RELEASE_NAME := vf875
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/vodafone/vf875/device_vf875.mk)
+$(call inherit-product, device/TCT/Vodafone_875/device_vf875.mk)
 
