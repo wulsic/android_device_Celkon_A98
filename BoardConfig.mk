@@ -19,11 +19,11 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/vodafone/vf875/BoardConfigVendor.mk
+-include vendor/TCT/Vodafone_875/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_PLATFORM := vf875
-TARGET_BOOTLOADER_BOARD_NAME := vf875
+TARGET_BOARD_PLATFORM := Vodafone_875
+TARGET_BOOTLOADER_BOARD_NAME := Vodafone_875
 
 TARGET_CPU_ABI := armeabi
 TARGET_CPU_ABI := armeabi-v7a

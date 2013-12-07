@@ -1,2 +1,2 @@
  PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_vf875.mk
+    $(LOCAL_DIR)/device_Vodafone_875.mk

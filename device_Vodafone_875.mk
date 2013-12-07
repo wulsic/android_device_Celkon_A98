@@ -143,9 +143,9 @@ PRODUCT_COPY_FILES += \
     device/TCT/Vodafone_875/prebuilt/system/lib/modules/wlan_mt6620.ko:system/lib/modules/wlan_mt6620.ko \
     device/TCT/Vodafone_875/prebuilt/system/lib/modules/wlan_mt6628.ko:system/lib/modules/wlan_mt6628.ko \
 
-PRODUCT_DEVICE := vf875
-PRODUCT_NAME := full_vf875
-PRODUCT_BRAND := vodafone
-PRODUCT_MODEL := vf875
-PRODUCT_MANUFACTURER := vodafone
-PRODUCT_RELEASE_NAME := vf875
+PRODUCT_DEVICE := Vodafone_875
+PRODUCT_NAME := full_Vodafone_875
+PRODUCT_BRAND := TCT
+PRODUCT_MODEL := Vodafone 875
+PRODUCT_MANUFACTURER := TCT
+PRODUCT_RELEASE_NAME := Vodafone_875
