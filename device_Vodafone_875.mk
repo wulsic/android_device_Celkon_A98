@@ -68,6 +68,10 @@ PRODUCT_COPY_FILES += \
     device/TCT/Vodafone_875/root/init.usb.rc:root/init.usb.rc \
     device/TCT/Vodafone_875/root/ueventd.mt6575.rc:root/ueventd.mt6575.rc
 
+#recovery
+#PRODUCT_COPY_FILES += \
+#	$(call find-copy-subdir-files,*,device/TCT/Vodafone_875/recovery_root,recovery/root)
+
 #system/etc
 PRODUCT_COPY_FILES += \
     device/TCT/Vodafone_875/prebuilt/system/etc/vold.fstab:system/etc/vold.fstab
