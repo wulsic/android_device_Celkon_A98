@@ -19,7 +19,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/Celkon/A98/BoardConfigVendor.mk
+-include vendor/celkon/A98/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
 
@@ -40,10 +40,10 @@ WIFI_DRIVER_MODULE_NAME := wlan
 BOARD_HAVE_BLUETOOTH := true
 
 #EGL configuration
-BOARD_EGL_CFG := device/Celkon/A98/prebuilt/system/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/celkon/A98/prebuilt/system/lib/egl/egl.cfg
 USE_OPENGL_RENDERER := true
 
-BOARD_CUSTOM_BOOTIMG_MK := device/Celkon/A98/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/celkon/A98/custombootimg.mk
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
@@ -56,10 +56,10 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 535822336 #511M
 BOARD_NAND_PAGE_SIZE := 4096 -s 128
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/Celkon/A98/kernel
+TARGET_PREBUILT_KERNEL := device/celkon/A98/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
-TRGET_PREBUILT_RECOVERY_KERNEL := device/Celkon/A98/kernel
+TRGET_PREBUILT_RECOVERY_KERNEL := device/celkon/A98/kernel
 #TARGET_RECOVERY_PRE_COMMAND := "touch /cache/recovery/boot;sync;"
 ##BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/Celkon/A98/recovery/recovery_keys.c
 #BOARD_HAS_NO_MISC_PARTITION := true

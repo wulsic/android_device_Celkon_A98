@@ -1,2 +1,2 @@
  PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_Celkon_A98.mk
+    $(LOCAL_DIR)/device_A98.mk
