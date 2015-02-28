@@ -46,7 +46,7 @@ PRODUCT_LOCALES += en
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-#permissions
+# Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -61,22 +61,22 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
 
-#root
+# Root
 PRODUCT_COPY_FILES += \
     device/Celkon/A98/root/fstab:root/fstab \
     device/Celkon/A98/root/init.mt6575.rc:root/init.mt6575.rc \
     device/Celkon/A98/root/init.usb.rc:root/init.usb.rc \
     device/Celkon/A98/root/ueventd.mt6575.rc:root/ueventd.mt6575.rc
 
-#recovery
+# Recovery
 #PRODUCT_COPY_FILES += \
 #	$(call find-copy-subdir-files,*,device/Celkon/A98/recovery_root,recovery/root)
 
-#system/etc
+# System/etc
 PRODUCT_COPY_FILES += \
     device/Celkon/A98/prebuilt/system/etc/vold.fstab:system/etc/vold.fstab
 
-#system/etc/firmware
+# System/etc/firmware
 PRODUCT_COPY_FILES += \
     device/Celkon/A98/prebuilt/system/etc/firmware/catcher_filter.bin:system/etc/firmware/catcher_filter.bin \
     device/Celkon/A98/prebuilt/system/etc/firmware/DSP_ROM:system/etc/firmware/DSP_ROM \
@@ -100,53 +100,61 @@ PRODUCT_COPY_FILES += \
     device/Celkon/A98/prebuilt/system/etc/firmware/WIFI_RAM_CODE_MT6628:system/etc/firmware/WIFI_RAM_CODE_MT6628 \
     device/Celkon/A98/prebuilt/system/etc/firmware/WMT.cfg:system/etc/firmware/WMT.cfg
 
-#system/etc/mddb
+# System/etc/mddb
 PRODUCT_COPY_FILES += \
-    device/Celkon/A98/prebuilt/system/etc/mddb/BPLGUInfoCustomAppSrcP_MT6575_S01_MAUI_11AMDW1222SP_V15_F5_P11_T5:system/etc/mddb/BPLGUInfoCustomAppSrcP_MT6575_S01_MAUI_11AMDW1222SP_V15_F5_P11_T5
+    device/Celkon/A98/prebuilt/system/etc/mddb/BPLGUInfoCustomAppSrcP_MT6575_S01_MAUI_11AMD_W11_50_SP_V29_P2:system/etc/mddb/BPLGUInfoCustomAppSrcP_MT6575_S01_MAUI_11AMD_W11_50_SP_V29_P2
 
-#system/etc/wifi
+# System/etc/wifi
 PRODUCT_COPY_FILES += \
     device/Celkon/A98/prebuilt/system/etc/wifi/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
     device/Celkon/A98/prebuilt/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
-#system/lib/egl
+# System/lib/egl
 PRODUCT_COPY_FILES += \
     device/Celkon/A98/prebuilt/system/lib/egl/egl.cfg:system/lib/egl/egl.cfg
 
-#system/lib
+# System/lib
 PRODUCT_COPY_FILES += \
     device/Celkon/A98/prebuilt/system/lib/mtk-ril.so:system/lib/mtk-ril.so
 
-#system/lib/modules
+# System/lib/modules
 PRODUCT_COPY_FILES += \
+    device/Celkon/A98/prebuilt/system/lib/modules/aed.ko:system/lib/modules/aed.ko \
+    device/Celkon/A98/prebuilt/system/lib/modules/alps_core.ko:system/lib/modules/alps_core.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/ccci.ko:system/lib/modules/ccci.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/ccci_plat.ko:system/lib/modules/ccci_plat.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/ccmni.ko:system/lib/modules/ccmni.ko \
-    device/Celkon/A98/prebuilt/system/lib/modules/devapc.ko:system/lib/modules/devapc.ko \
+    device/Celkon/A98/prebuilt/system/lib/modules/cfg80211.ko:system/lib/modules/cfg80211.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/devinfo.ko:system/lib/modules/devinfo.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/eeprom_93cx6.ko:system/lib/modules/eeprom_93cx6.ko \
-    device/Celkon/A98/prebuilt/system/lib/modules/hid-logitech-dj.ko:system/lib/modules/hid-logitech-dj.ko \
-    device/Celkon/A98/prebuilt/system/lib/modules/m4u.ko:system/lib/modules/m4u.ko \
-    device/Celkon/A98/prebuilt/system/lib/modules/mtklfb.ko:system/lib/modules/mtklfb.ko \
+    device/Celkon/A98/prebuilt/system/lib/modules/mt6575_m4u.ko:system/lib/modules/mt6575_m4u.ko \
+    device/Celkon/A98/prebuilt/system/lib/modules/mt6575_vcodec_kernel_driver.ko:system/lib/modules/mt6575_vcodec_kernel_driver.ko \
+    device/Celkon/A98/prebuilt/system/lib/modules/mtk_drvb_75.ko:system/lib/modules/mtk_drvb_75.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_fm_drv.ko:system/lib/modules/mtk_fm_drv.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_fm_priv.ko:system/lib/modules/mtk_fm_priv.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_hif_sdio.ko:system/lib/modules/mtk_hif_sdio.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_hif_sdio_mt6620.ko:system/lib/modules/mtk_hif_sdio_mt6620.ko \
+    device/Celkon/A98/prebuilt/system/lib/modules/mtklfb.ko:system/lib/modules/mtklfb.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_stp_bt.ko:system/lib/modules/mtk_stp_bt.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_stp_bt_mt6620.ko:system/lib/modules/mtk_stp_bt_mt6620.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_stp_gps.ko:system/lib/modules/mtk_stp_gps.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_stp_gps_mt6620.ko:system/lib/modules/mtk_stp_gps_mt6620.ko \
+    device/Celkon/A98/prebuilt/system/lib/modules/mtk_stp_sdio:system/lib/modules/mtk_stp_sdio \
+    device/Celkon/A98/prebuilt/system/lib/modules/mtk_stp_sdio_mt6620.ko:system/lib/modules/mtk_stp_sdio_mt6620.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_stp_uart.ko:system/lib/modules/mtk_stp_uart.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_stp_uart_mt6620.ko:system/lib/modules/mtk_stp_uart_mt6620.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_stp_wmt.ko:system/lib/modules/mtk_stp_wmt.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_stp_wmt_mt6620.ko:system/lib/modules/mtk_stp_wmt_mt6620.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_wmt_wifi.ko:system/lib/modules/mtk_wmt_wifi.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/mtk_wmt_wifi_mt6620.ko:system/lib/modules/mtk_wmt_wifi_mt6620.ko \
+    device/Celkon/A98/prebuilt/system/lib/modules/p2p.ko:system/lib/modules/p2p.ko \
+    device/Celkon/A98/prebuilt/system/lib/modules/p2p_mt6620.ko:system/lib/modules/p2p_mt6620.ko \
+    device/Celkon/A98/prebuilt/system/lib/modules/p2p_mt6628.ko:system/lib/modules/p2p_mt6628.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/pvrsrvkm.ko:system/lib/modules/pvrsrvkm.ko \
+    device/Celkon/A98/prebuilt/system/lib/modules/sbup.ko:system/lib/modules/sbup.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/scsi_tgt.ko:system/lib/modules/scsi_tgt.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/sec.ko:system/lib/modules/sec.ko \
-    device/Celkon/A98/prebuilt/system/lib/modules/vcodec_kernel_driver.ko:system/lib/modules/vcodec_kernel_driver.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/wlan.ko:system/lib/modules/wlan.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/wlan_mt6620.ko:system/lib/modules/wlan_mt6620.ko \
     device/Celkon/A98/prebuilt/system/lib/modules/wlan_mt6628.ko:system/lib/modules/wlan_mt6628.ko \
