@@ -1,1 +1,1 @@
-add_lunch_combo full_Vodafone_875-userdebug
+add_lunch_combo full_Celkon_A98-userdebug

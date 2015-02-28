@@ -2,11 +2,11 @@
 $(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := Vodafone_875
+PRODUCT_RELEASE_NAME := Celkon_A98
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/TCT/Vodafone_875/device_Vodafone_875.mk)
+$(call inherit-product, device/Celkon/A98/device_Celkon_A98.mk)
 

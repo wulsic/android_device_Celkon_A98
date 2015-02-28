@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-MKIMAGE := device/TCT/Vodafone_875/tools/mkimage
+MKIMAGE := device/Celkon/A98/tools/mkimage
 
 $(PRODUCT_OUT)/boot.img: $(PRODUCT_OUT)/kernel $(INSTALLED_RAMDISK_TARGET) $(MKBOOTIMG) $(MINIGZIP) $(INTERNAL_BOOTIMAGE_FILES)
 	$(call pretty,"Boot image: $@")

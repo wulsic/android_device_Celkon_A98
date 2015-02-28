@@ -5,4 +5,4 @@ include $(CLEAR_VARS)
 ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
 
 # include the non-open-source counterpart to this file
--include vendor/TCT/Vodafone_875/AndroidBoardVendor.mk
+-include vendor/Celkon/A98/AndroidBoardVendor.mk
