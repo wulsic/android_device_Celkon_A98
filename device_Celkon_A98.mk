@@ -16,10 +16,6 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, build/target/product/full.mk)
 
-# Set mod version
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.modversion=Balika011's-CM10-FOR-VF875-$(shell date +%m%d%Y)-NIGHTLY
-
 # Speed up scrolling
 PRODUCT_PROPERTY_OVERRIDES += \
     windowsmgr.max_events_per_sec=60
