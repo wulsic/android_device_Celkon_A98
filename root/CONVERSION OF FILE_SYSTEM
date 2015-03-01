@@ -1,0 +1,46 @@
+Convert Blocks to Bytes
+Very easily 
+
+
+
+=========== CONVERT FROM BYTES TO BLOCKS =========== 
+
+For example:
+
+100 Megabytes = 1024 x 1024 x 100
+---------------------------------
+1 Megabyte = 1024 x 1024 x 1
+1 Kilobyte = 1024 x 1
+1 Byte = 1
+
+A block is a set quantity of bytes. For example, a mounted partition could have blocks of 4096 bytes or 4k.
+
+Typically however, quotas will have a block size of 1024 bytes ( 1k ).
+
+To calculate the quantity of blocks for quotas you should allocate blocks using the following formula:
+
+Allocate 100Mb of space to a user:
+
+1024 x 1024 x 100 = 104,857,600 (in bytes) = 100Mb
+
+Divide the number of bytes by the block size:
+
+Block size of 4096: 104,857,600 / 4096 = 25,600 blocks
+
+Block size of 1024: 104,857,600 / 1024 = 102,400 blocks
+
+25,600  blocks = 100Mb if your block size is 4096 (unlikely for quotas)
+102,400 blocks = 100mb if your block size is 1024
+
+
+
+
+=========== CONVERT FROM BLOCKS TO BYTES ===========
+
+Now determine how many Megabytes a quota of 262144 blocks equals:
+
+1) 262144 multiplied by the size of the blocks:
+262144 x 1024 = 268,435,456 (number of total bytes)
+
+2) Since we are dealing with megabytes, divide by 1024 x 1024
+( 268,435,456 / 1048576 ) = 256
