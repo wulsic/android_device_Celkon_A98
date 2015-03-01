@@ -3,17 +3,36 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
+$(call inherit-product-if-exists, vendor/celkon/A98/A98-vendor.mk)
+
 DEVICE_PACKAGE_OVERLAYS += device/celkon/A98/overlay
 
 $(call inherit-product, build/target/product/full.mk)
 
+PRODUCT_LOCALES += en
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+
 # Speed up scrolling
 PRODUCT_PROPERTY_OVERRIDES += \
     windowsmgr.max_events_per_sec=60
+
 # Default network type.
 # 0 => WCDMA preferred, 3 => GSM/AUTO (PRL) preferred
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=0
+
+# Extended JNI checks
+# The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs 
+# before they have a chance to cause problems.
+# Default=true for development builds, set by android buildsystem.
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.kernel.android.checkjni=0 \
+    dalvik.vm.checkjni=false
+
+# MTP
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=1 \
@@ -29,9 +48,15 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     com.android.future.usb.accessory \
 
-PRODUCT_LOCALES += en
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+# netcmd interface
+PRODUCT_PACKAGES += \
+    libnetcmdiface
+
+# Misc other modules
+PRODUCT_PACKAGES += \
+	audio.a2dp.default \
+	audio.usb.default \
+	audio.r_submix.default \
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -61,31 +86,8 @@ PRODUCT_COPY_FILES += \
 
 # System/etc
 PRODUCT_COPY_FILES += \
-    device/celkon/A98/prebuilt/system/etc/vold.fstab:system/etc/vold.fstab
-
-# System/etc/firmware
-PRODUCT_COPY_FILES += \
-    device/celkon/A98/prebuilt/system/etc/firmware/catcher_filter.bin:system/etc/firmware/catcher_filter.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/DSP_ROM:system/etc/firmware/DSP_ROM \
-    device/celkon/A98/prebuilt/system/etc/firmware/modem.img:system/etc/firmware/modem.img \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_fm_rom.bin:system/etc/firmware/mt6628_fm_rom.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_fm_v1_coeff.bin:system/etc/firmware/mt6628_fm_v1_coeff.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_fm_v1_patch.bin:system/etc/firmware/mt6628_fm_v1_patch.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_fm_v2_coeff.bin:system/etc/firmware/mt6628_fm_v2_coeff.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_fm_v2_patch.bin:system/etc/firmware/mt6628_fm_v2_patch.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_fm_v3_coeff.bin:system/etc/firmware/mt6628_fm_v3_coeff.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_fm_v3_patch.bin:system/etc/firmware/mt6628_fm_v3_patch.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_fm_v4_coeff.bin:system/etc/firmware/mt6628_fm_v4_coeff.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_fm_v4_patch.bin:system/etc/firmware/mt6628_fm_v4_patch.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_fm_v5_coeff.bin:system/etc/firmware/mt6628_fm_v5_coeff.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_fm_v5_patch.bin:system/etc/firmware/mt6628_fm_v5_patch.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_patch_e1_hdr.bin:system/etc/firmware/mt6628_patch_e1_hdr.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/mt6628_patch_e2_hdr.bin:system/etc/firmware/mt6628_patch_e2_hdr.bin \
-    device/celkon/A98/prebuilt/system/etc/firmware/S_ANDRO_SFL.ini:system/etc/firmware/S_ANDRO_SFL.ini \
-    device/celkon/A98/prebuilt/system/etc/firmware/WIFI_RAM_CODE:system/etc/firmware/WIFI_RAM_CODE \
-    device/celkon/A98/prebuilt/system/etc/firmware/WIFI_RAM_CODE_E6:system/etc/firmware/WIFI_RAM_CODE_E6 \
-    device/celkon/A98/prebuilt/system/etc/firmware/WIFI_RAM_CODE_MT6628:system/etc/firmware/WIFI_RAM_CODE_MT6628 \
-    device/celkon/A98/prebuilt/system/etc/firmware/WMT.cfg:system/etc/firmware/WMT.cfg
+    device/celkon/A98/prebuilt/system/etc/vold.fstab:system/etc/vold.fstab \
+    device/celkon/A98/prebuilt/system/etc/vold.fstab.nand:system/etc/vold.fstab.nand
 
 # System/etc/mddb
 PRODUCT_COPY_FILES += \
@@ -145,6 +147,14 @@ PRODUCT_COPY_FILES += \
     device/celkon/A98/prebuilt/system/lib/modules/wlan.ko:system/lib/modules/wlan.ko \
     device/celkon/A98/prebuilt/system/lib/modules/wlan_mt6620.ko:system/lib/modules/wlan_mt6620.ko \
     device/celkon/A98/prebuilt/system/lib/modules/wlan_mt6628.ko:system/lib/modules/wlan_mt6628.ko \
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 800
+TARGET_SCREEN_WIDTH := 480
+
+# Dalvik heap config
+include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 PRODUCT_DEVICE := Celkon A98
 PRODUCT_NAME := full_A98
