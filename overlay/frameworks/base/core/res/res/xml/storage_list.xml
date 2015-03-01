@@ -40,7 +40,6 @@
              android:mtpReserve="10485760" />
 
     <storage android:mountPoint="/mnt/sdcard1"
-             android:mountPoint="/storage/sdcard1"
              android:storageDescription="@string/storage_sd_card"
              android:primary="false"
              android:removable="true"

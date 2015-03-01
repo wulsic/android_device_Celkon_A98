@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-MKIMAGE := device/Celkon/A98/tools/mkimage
+MKIMAGE := device/celkon/A98/tools/mkimage
 
 $(PRODUCT_OUT)/boot.img: $(PRODUCT_OUT)/kernel $(INSTALLED_RAMDISK_TARGET) $(MKBOOTIMG) $(MINIGZIP) $(INTERNAL_BOOTIMAGE_FILES)
 	$(call pretty,"Boot image: $@")

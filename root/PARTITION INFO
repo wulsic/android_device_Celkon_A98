@@ -1,0 +1,75 @@
+mtd0: 00040000 00020000 "preloader"
+mtd1: 000c0000 00020000 "dsp_bl"
+mtd2: 00300000 00020000 "nvram"
+mtd3: 00020000 00020000 "seccnfg"
+mtd4: 00060000 00020000 "uboot"
+mtd5: 00500000 00020000 "boot"
+mtd6: 00500000 00020000 "recovery"
+mtd7: 00120000 00020000 "secstatic"
+mtd8: 00060000 00020000 "misc"
+mtd9: 00300000 00020000 "logo"
+mtd10: 000a0000 00020000 "expdb"
+mtd11: 12800000 00020000 "system"
+mtd12: 01e00000 00020000 "cache"
+mtd13: 09c20000 00020000 "userdata"
+
+
+  31        0        256 mtdblock0
+  31        1        768 mtdblock1
+  31        2       3072 mtdblock2
+  31        3        128 mtdblock3
+  31        4        384 mtdblock4
+  31        5       5120 mtdblock5
+  31        6       5120 mtdblock6
+  31        7       1152 mtdblock7
+  31        8        384 mtdblock8
+  31        9       3072 mtdblock9
+  31       10        640 mtdblock10
+  31       11     303104 mtdblock11
+  31       12      30720 mtdblock12
+  31       13     159872 mtdblock13
+ 179        0    7703552 mmcblk0
+ 179        1    7702528 mmcblk0p1
+
+
+FAKE ONE FROM "adb shell"
+
+_________________________________________________________________________________________
+_________________________________________________________________________________________
+
+
+
+
+
+
+REAL ONE FROM "recovery.img" and maded it for easy understadning
+
+/boot		emmc		boot
+/cache		ext4		/dev/block/mmcblk0p2 
+/data		ext4		/dev/block/mmcblk0p3
+/misc		emmc		misc
+/recovery	emmc		recovery
+/sdcard		vfat		/dev/block/mmcblk0p4
+/system		ext4		/dev/block/mmcblk0p6
+
+
+  31        0        256  unknown      preloader
+  31        1        768   ""          dsp_bl
+  31        2       3072   ""          nvram
+  31        3        128   ""          seccnfg
+  31        4        384   ""          uboot
+  31        5       5120   ""          boot
+  31        6       5120   ""          recovery
+  31        7       1152   ""          secstatic
+  31        8        384   ""          misc
+  31        9       3072   ""          logo
+  31       10        640   ""          expdb
+  31       11     303104 mmcblk0p6     /system
+  31       12      30720 mmcblk0p2     /cache
+  31       13     159872 mtcblk0p3     /data
+ 179        0    7703552 mmcblk0
+ 179        1    7702528 mmcblk0p4     /sdcard
+
+
+
+
