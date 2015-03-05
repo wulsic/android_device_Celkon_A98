@@ -58,6 +58,15 @@ PRODUCT_PACKAGES += \
 	audio.usb.default \
 	audio.r_submix.default \
 
+PRODUCT_TAGS += dalvik.gc.type-precise
+
+#ui helper
+PRODUCT_PACKAGES += \
+	libui-mtk
+	
+PRODUCT_PACKAGES += \
+	Torch
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -77,8 +86,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/celkon/A98/root/fstab.mt6575:root/fstab.mt6575 \
     device/celkon/A98/root/init.mt6575.rc:root/init.mt6575.rc \
-    device/celkon/A98/root/init.usb.rc:root/init.usb.rc \
-    device/celkon/A98/root/ueventd.mt6575.rc:root/ueventd.mt6575.rc
+    device/celkon/A98/root/init.mt6575.usb.rc:root/init.mt6575.usb.rc \
+    device/celkon/A98/root/ueventd.mt6575.rc:root/ueventd.mt6575.rc \
+    device/celkon/A98/root/mke2fs.conf:root/mke2fs.conf
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 800
